@@ -1,357 +1,279 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dr. Mohamed Elmaghawry | Consultant Orthopedic Surgeon</title>
-  <meta name="description"
-    content="Leading international expert in sports traumatology and fracture management. Modern, compassionate care for all your orthopedic needs.">
+  <title>دكتور محمد المغاوري | Orthopaedic Surgery Specialist</title>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css">
-
-  <!-- Google Fonts - Inter & Playfair Display -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Outfit:wght@400;700&family=Instrument+Serif:ital,wght@1,700&family=Noto+Sans+Arabic:wght@400;700&family=JetBrains+Mono&display=swap"
     rel="stylesheet">
 
-  <!-- FontAwesome Icons for consistency (via web interface only, though local requested - standard icons from SVG/Assets used mostly) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="light-mode">
+<body class="dark-mode">
 
-  <!-- Navigation -->
-  <header id="header">
-    <div class="nav-container">
-      <a href="#home" class="logo">
-        <div class="logo-circle">
-          <img src="assets/images/logo.png" alt="Logo" class="logo-img">
-        </div>
-        <span class="logo-text">Dr Mohamed Elmaghawry <span class="dot">.</span></span>
-      </a>
-
-      <nav class="nav-links">
-        <a href="#home" class="nav-link">Home</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#services" class="nav-link">Services</a>
-        <a href="#cases" class="nav-link">Patient Showcase</a>
-        <a href="#testimonials" class="nav-link">Testimonials</a>
-        <a href="#contact" class="btn btn-primary btn-sm">Book Appointment</a>
-      </nav>
-
-      <div class="nav-controls">
-        <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">
-          <i class="fa-solid fa-moon"></i>
-        </button>
-        <div class="mobile-toggle">
-          <i class="fa-solid fa-bars" id="menu-btn"></i>
-        </div>
-      </div>
+  <!-- Navbar -->
+  <nav class="nav-island">
+    <a href="#" class="brand">
+      <i data-lucide="bone" size="24" color="#c9a84c"></i>
+      <span class="t9n" data-ar="د. محمد المغاوري" data-en="Dr. Mohamed Elmaghawry">د. محمد المغاوري</span>
+    </a>
+    <div class="nav-links">
+      <a href="#services" class="t9n" data-ar="الخدمات" data-en="Services">الخدمات</a>
+      <a href="#cases" class="t9n" data-ar="الحالات" data-en="Cases">الحالات</a>
+      <a href="#protocol" class="t9n" data-ar="البروتوكول" data-en="Protocol">البروتوكول</a>
+      <a href="#contact" class="btn btn-primary t9n" data-ar="احجز موعدك" data-en="Book Appointment">احجز موعدك</a>
     </div>
-  </header>
+    <div style="display: flex; gap: 0.5rem; align-items: center;">
+      <button id="lang-toggle" class="btn btn-secondary"
+        style="padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.8rem; font-weight: 700;">EN</button>
+      <button id="theme-toggle" class="btn btn-secondary" style="padding: 0.5rem; border-radius: 50%;">
+        <i data-lucide="moon" size="20"></i>
+      </button>
+    </div>
+  </nav>
 
   <main>
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="hero" class="hero section">
       <div class="container hero-grid">
-        <div class="hero-text reveal">
-          <div class="badge">Trusted Orthopedic Expert</div>
-          <h1>Excellence in <span>Orthopedic Surgery</span> & Traumatology.</h1>
-          <p>Restoring motion and enhancing performance through advanced surgical techniques and compassionate patient
-            care. International expertise right in the heart of Cairo.</p>
-          <div class="hero-btns">
-            <a href="#contact" class="btn btn-primary">Book Consultation <i class="fa-solid fa-calendar-check"></i></a>
-            <a href="#about" class="btn btn-secondary">Learn More</a>
+        <div class="hero-content">
+          <span class="doctor-name reveal t9n" data-ar="د. محمد المغاوري" data-en="Dr. Mohamed Elmaghawry">د. محمد
+            المغاوري</span>
+          <div class="reveal t9n" data-ar="جراحة العظام" data-en="Orthopaedic Surgery"
+            style="display: inline-block; padding: 0.4rem 1rem; border: 1px solid var(--highlight); border-radius: 2rem; margin-bottom: 2rem; font-size: 0.7rem; font-family: var(--font-mono); color: var(--highlight);">
+            جراحة العظام
           </div>
-          <div class="hero-stats">
-            <div class="stat-card reveal delayed">
-              <i class="fa-solid fa-hospital-user"></i>
-              <div class="stat-info">
-                <span class="stat-val">15+</span>
-                <span class="stat-label">Years of Experience</span>
-              </div>
-            </div>
-            <div class="stat-card reveal more-delayed">
-              <i class="fa-solid fa-user-doctor"></i>
-              <div class="stat-info">
-                <span class="stat-val">5K+</span>
-                <span class="stat-label">Patients Treated</span>
-              </div>
-            </div>
-            <div class="stat-card reveal most-delayed">
-              <i class="fa-solid fa-star-of-life"></i>
-              <div class="stat-info">
-                <span class="stat-val">99%</span>
-                <span class="stat-label">Success Rate</span>
-              </div>
-            </div>
+          <h1 class="reveal">
+            <span class="t9n" data-ar="جراحة العظام هي" data-en="Orthopaedic Surgery is"
+              style="font-weight: 700; opacity: 0.7; font-size: 0.5em;">جراحة العظام هي</span><br>
+            <span class="drama-italic t9n" data-ar="فن استعادة الحركة." data-en="The Art of Movement.">فن استعادة
+              الحركة.</span>
+          </h1>
+          <p class="reveal t9n"
+            data-ar="نقدم رعاية طبية متطورة في مجال جراحة العظام والكسور لضمان عودتك لحياتك الطبيعية في أسرع وقت."
+            data-en="Providing advanced orthopaedic care and trauma surgery to ensure you return to your normal life as quickly as possible."
+            style="font-size: 1.25rem; margin-bottom: 2rem; max-width: 600px; color: rgba(255,255,255,0.8); line-height: 1.6;">
+            نقدم رعاية طبية متطورة في مجال جراحة العظام والكسور لضمان عودتك لحياتك الطبيعية في أسرع وقت.
+          </p>
+          <div class="reveal hero-btns" style="display: flex; gap: 1rem; justify-content: flex-start;">
+            <a href="#contact" class="btn btn-primary t9n" data-ar="حجز كشف" data-en="Initial Consultation">حجز كشف</a>
+            <a href="tel:01503753779" class="btn btn-secondary t9n" data-ar="اتصل بنا" data-en="Call Now">اتصل بنا</a>
           </div>
         </div>
-        <div class="hero-visual reveal delayed expand-in">
+
+        <div class="hero-visual">
+          <div class="hero-orbit-container">
+            <div class="orbit-ring ring-1"></div>
+            <div class="orbit-ring ring-2"></div>
+            <div class="orbit-ring ring-3"></div>
+            <div class="orbit-dot" id="dot-main"></div>
+
+            <div class="orbit-badge" id="badge-1">
+              <i data-lucide="award"></i>
+              <span class="t9n" data-ar="استشاري جراحة" data-en="Orthopaedic Specialist">استشاري جراحة</span>
+            </div>
+
+            <div class="orbit-badge" id="badge-2">
+              <i data-lucide="users"></i>
+              <span class="t9n" data-ar="+١٠٠٠ حالة" data-en="+1000 Cases">+١٠٠٠ حالة</span>
+            </div>
+
+            <div class="orbit-badge" id="badge-3">
+              <i data-lucide="map-pin"></i>
+              <span class="t9n" data-ar="الدقهلية، الجمالية" data-en="Gammaliya - Lisa">الدقهلية، الجمالية</span>
+            </div>
+          </div>
+
           <div class="visual-frame">
-            <img src="assets/doctor image.jpeg" alt="Dr. Mohamed Elmaghawry" class="hero-img">
-            <div class="floating-badge">
-              <i class="fa-solid fa-award"></i>
-              <span>Board Certified Surgeon</span>
-            </div>
+            <img src="assets/images/doctor.jpeg" alt="د. محمد المغاوري">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-      <div class="container about-grid">
-        <div class="about-visual reveal slide-in-left">
-          <div class="about-img-frame">
-            <!-- Using the clinical about image -->
-            <img src="assets/doctor_image_in_about.jpeg" alt="Dr. Mohamed Elmaghawry Clinical" class="about-img">
-          </div>
-        </div>
-        <div class="about-content reveal">
-          <div class="section-tag section-tag-green">International Biography</div>
-          <h2>Dedicated to Your <span>Full Recovery.</span></h2>
-          <p class="about-lead">Dr. Mohamed Elmaghawry is a Consultant Orthopedic Surgeon with a focus on sports traumatology and complex fracture reconstruction.</p>
-          <p>Educated at the world's most prestigious institutions, Dr. Mohamed brings over 15 years of surgical
-            excellence to his patients. His philosophy centers on minimally invasive procedures and biological bone
-            healing to ensure the fastest, most effective recovery possible.</p>
-
-          <div class="about-features">
-            <div class="feature-card">
-              <i class="fa-solid fa-graduation-cap"></i>
-              <div>
-                <h4>Expert Qualifications</h4>
-                <p>MSc. in Orthopedics & Trauma, FEBOT Certified.</p>
-              </div>
-            </div>
-            <div class="feature-card">
-              <i class="fa-solid fa-microscope"></i>
-              <div>
-                <h4>Mission & Vision</h4>
-                <p>To pioneer surgical innovation and deliver life-changing outcomes for our global community.</p>
-              </div>
-            </div>
-          </div>
-          <a href="#contact" class="btn btn-primary">Consult With The Expert</a>
+    <!-- Infinite Scroll Ticker -->
+    <section id="services" class="ticker-section">
+      <div class="ticker-wrapper" id="ticker-services">
+        <div class="ticker-row">
+          <span><span class="ticker-highlight t9n" data-ar="رؤيتنا:" data-en="Our Vision:">رؤيتنا:</span> <span
+              class="t9n" data-ar="استعادة جودة الحياة." data-en="Restoring Life.">استعادة جودة الحياة.</span></span>
+          <span><i data-lucide="bone" color="var(--highlight)"></i> <span class="t9n" data-ar="علاج الكسور المعقدة"
+              data-en="Complex Fractures">علاج الكسور المعقدة</span></span>
+          <span><i data-lucide="activity" color="var(--highlight)"></i> <span class="t9n" data-ar="الطب الرياضي"
+              data-en="Sports Medicine">الطب الرياضي</span></span>
+          <span><i data-lucide="heart-pulse" color="var(--highlight)"></i> <span class="t9n"
+              data-ar="آلام العمود الفقري" data-en="Spine Care">آلام العمود الفقري</span></span>
+          <span><i data-lucide="sparkles" color="var(--highlight)"></i> <span class="t9n" data-ar="حقن المفاصل"
+              data-en="Joint Injections">حقن المفاصل</span></span>
         </div>
       </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services section-gray">
+    <!-- Cases Showcase -->
+    <section id="cases" class="section">
       <div class="container">
-        <div class="section-header text-center reveal">
-          <div class="section-tag mx-auto">Specialized Services</div>
-          <h2>Our Core Surgical <span>Competencies</span></h2>
-          <div class="divider mx-auto"></div>
-          <p class="section-desc mx-auto">Providing world-class treatments for bone and trauma conditions using modern minimally invasive techniques.</p>
-        </div>
-
-        <div class="services-grid">
-
-          <!-- Service 2 -->
-          <div class="service-card reveal">
-            <div class="service-icon">
-              <img src="assets/icons/fracture.png" alt="Fracture Treatment Icon">
-            </div>
-            <h3>Fracture Treatment</h3>
-            <p>Specialized management of complex trauma and non-union fractures using biological fixation methods.</p>
-          </div>
-
-          <!-- Service 3 -->
-          <div class="service-card reveal">
-            <div class="service-icon">
-              <img src="assets/icons/sports.svg" alt="Sports Injury Icon">
-            </div>
-            <h3>Sports Injuries</h3>
-            <p>From ACL construction to rotator cuff repair, helping you return to your peak athletic performance.</p>
-          </div>
-
-          <!-- Service 4 -->
-          <div class="service-card reveal">
-            <div class="service-icon">
-              <img src="assets/icons/bone.svg" alt="Bone Deformity Icon">
-            </div>
-            <h3>Bone Deformities</h3>
-            <p>Comprehensive correction of limb deformities and malalignments using 3D surgical planning.</p>
-          </div>
-        </div>
-
-        <div class="services-footer text-center reveal">
-          <p>Not sure which service fits your condition? <a href="#contact">Contact us for advice.</a></p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Patient Showcase / Cases -->
-    <section id="cases" class="cases">
-      <div class="container">
-        <div class="section-header text-center reveal">
-          <div class="section-tag mx-auto">Case Study Showcase</div>
-          <h2>Transformational <span>Patient Outcomes</span></h2>
-          <div class="divider mx-auto"></div>
+        <div style="text-align: center; margin-bottom: 4rem;">
+          <p class="t9n" data-ar="الحالات" data-en="SUCCESS STORIES"
+            style="color: var(--highlight); font-family: var(--font-mono); font-size: 0.9rem; letter-spacing: 2px;">
+            الحالات</p>
+          <h2 style="font-size: 3rem;"><span class="t9n" data-ar="نتائج" data-en="Proven">نتائج</span> <span
+              class="drama-italic t9n" data-ar="طبية واقعية." data-en="Outcomes.">طبية واقعية.</span></h2>
         </div>
 
         <div class="cases-grid">
-
+          <!-- Case 1 -->
+          <div class="case-card reveal-up">
+            <img src="assets/images/case.png" alt="Case 1" class="case-img">
+            <div class="case-overlay">
+              <span class="case-tag t9n" data-ar="إعادة بناء" data-en="RECONSTRUCTION">إعادة بناء</span>
+              <h4 class="t9n" data-ar="إصلاح كسر مضاعف" data-en="Complex Fracture Repair" style="margin: 0.5rem 0;">
+                إصلاح كسر مضاعف</h4>
+              <p style="font-size: 0.8rem; opacity: 0.7;" class="t9n" data-ar="استعادة الحركة الكاملة في ١٢ أسبوعاً."
+                data-en="Full mobility restored in 12 weeks.">استعادة الحركة الكاملة في ١٢ أسبوعاً.</p>
+            </div>
+          </div>
           <!-- Case 2 -->
-          <div class="case-card reveal delayed slide-up">
-            <div class="case-visual">
-              <div class="case-tag">Case: Reconstruction</div>
-              <img src="assets/before_after" alt="Case Sports" class="case-img">
-            </div>
-            <div class="case-body">
-              <h4>ACL Reconstruction</h4>
-              <p>Revision surgery for a professional football athlete. Currently competing at international levels.</p>
+          <div class="case-card reveal-up">
+            <img src="assets/images/case.png" alt="Case 2" class="case-img">
+            <div class="case-overlay">
+              <span class="case-tag t9n" data-ar="طب رياضي" data-en="SPORTS MEDICINE">طب رياضي</span>
+              <h4 class="t9n" data-ar="إعادة بناء الرباط الصليبي" data-en="ACL Reconstruction"
+                style="margin: 0.5rem 0;">إعادة بناء الرباط الصليبي</h4>
+              <p style="font-size: 0.8rem; opacity: 0.7;" class="t9n" data-ar="العودة للملاعب في زمن قياسي."
+                data-en="Record-breaking return to the field.">العودة للملاعب في زمن قياسي.</p>
             </div>
           </div>
-
           <!-- Case 3 -->
-          <div class="case-card reveal more-delayed slide-up">
-            <div class="case-visual">
-              <div class="case-tag">Case: Trauma Repair</div>
-              <img src="assets/before_after" alt="Case Trauma" class="case-img">
-            </div>
-            <div class="case-body">
-              <h4>Complex Humeral Fracture</h4>
-              <p>Intricate reconstructive surgery after a major vehicular accident. Full functional hand recovery
-                achieved.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ & Testimonials -->
-    <section class="faq-testimonials section-gray">
-      <div class="container faq-testimonials-grid">
-        <div class="faq-content reveal">
-          <div class="section-tag">Common Questions</div>
-          <h3>Frequently Asked Questions</h3>
-          <div class="accordion">
-            <div class="accordion-item">
-              <button class="accordion-header">What should I bring to my first appointment? <i
-                  class="fa-solid fa-plus"></i></button>
-              <div class="accordion-body">
-                <p>Please bring any previous X-rays, MRI scans, and a list of your current medications and medical
-                  history.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-content reveal delayed">
-          <div class="testimonial-slider">
-            <div class="testimonial-item">
-              <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                  class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-              <blockquote>"Dr. Mohamed literally gave me my life back. I was in constant pain for 5 years, and after my
-                corrective surgery, I'm pain-free."</blockquote>
-              <div class="test-author">— Sarah J., Patient</div>
+          <div class="case-card reveal-up">
+            <img src="assets/images/case.png" alt="Case 3" class="case-img">
+            <div class="case-overlay">
+              <span class="case-tag t9n" data-ar="العمود الفقري" data-en="SPINE CARE">العمود الفقري</span>
+              <h4 class="t9n" data-ar="علاج الانزلاق الغضروفي" data-en="Disc Herniation Care" style="margin: 0.5rem 0;">
+                علاج الانزلاق الغضروفي</h4>
+              <p style="font-size: 0.8rem; opacity: 0.7;" class="t9n" data-ar="تخفيف فوري للآلام المزمنة."
+                data-en="Immediate relief from chronic pain.">تخفيف فوري للآلام المزمنة.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact & Location -->
-    <section id="contact" class="contact">
+    <!-- Protocol Section -->
+    <section id="protocol" class="section">
       <div class="container">
-        <div class="contact-grid">
-          <div class="contact-info reveal">
-            <div class="section-tag">Let's Connect</div>
-            <h2>Get In Touch <span>Directly</span></h2>
-            <p>Schedule your professional consultation or inquire about a surgery. We're here to help.</p>
+        <div style="text-align: center; margin-bottom: 4rem;">
+          <p class="t9n" data-ar="بروتوكول العلاج" data-en="TREATMENT PROTOCOL"
+            style="color: var(--highlight); font-family: var(--font-mono); font-size: 0.9rem; letter-spacing: 2px;">
+            بروتوكول العلاج</p>
+          <h2 style="font-size: 3rem;"><span class="t9n" data-ar="مسار" data-en="The Journey to">مسار</span> <span
+              class="drama-italic t9n" data-ar="التعافي الكامل." data-en="Full Recovery.">التعافي الكامل.</span></h2>
+        </div>
 
-            <div class="info-list">
-              <div class="info-item">
-                <i class="fa-solid fa-phone"></i>
-                <div>
-                  <h4>Call Us</h4>
-                  <p>+20 123 456 7890</p>
-                </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+          <div class="reveal-up"
+            style="background: var(--bg-surface); padding: 3rem; border-radius: var(--radius-outer); border: 1px solid rgba(255,255,255,0.05);">
+            <span style="font-family: var(--font-mono); color: var(--highlight);">01 / DIAGNOSIS</span>
+            <h3 class="t9n" data-ar="الفحص الدقيق." data-en="Precision Scanning."
+              style="font-size: 2rem; margin: 1.5rem 0;">الفحص الدقيق.</h3>
+            <p class="t9n" data-ar="تشخيص الحالة بدقة باستخدام أحدث التقنيات الطبية لضمان اختيار العلاج الأمثل."
+              data-en="Accurate clinical diagnosis using modern diagnostics to determine the ideal treatment pathway."
+              style="opacity: 0.7;">تشخيص الحالة بدقة باستخدام أحدث التقنيات الطبية لضمان اختيار العلاج الأمثل.</p>
+          </div>
+
+          <div class="reveal-up"
+            style="background: var(--bg-surface); padding: 3rem; border-radius: var(--radius-outer); border: 1px solid rgba(255,255,255,0.05);">
+            <span style="font-family: var(--font-mono); color: var(--highlight);">02 / TREATMENT</span>
+            <h3 class="t9n" data-ar="الخطة العلاجية." data-en="Treatment Design."
+              style="font-size: 2rem; margin: 1.5rem 0;">الخطة العلاجية.</h3>
+            <p class="t9n" data-ar="تطبيق بروتوكول علاجي مخصص لكل حالة، سواء بالعلاج التحفظي أو التدخل الجراحي."
+              data-en="Implementing custom protocols for every patient, whether through conservative care or surgery."
+              style="opacity: 0.7;">تطبيق بروتوكول علاجي مخصص لكل حالة، سواء بالعلاج التحفظي أو التدخل الجراحي.</p>
+          </div>
+
+          <div class="reveal-up"
+            style="background: var(--bg-surface); padding: 3rem; border-radius: var(--radius-outer); border: 1px solid rgba(255,255,255,0.05);">
+            <span style="font-family: var(--font-mono); color: var(--highlight);">03 / RECOVERY</span>
+            <h3 class="t9n" data-ar="المتابعة والاستشفاء." data-en="Full Recovery."
+              style="font-size: 2rem; margin: 1.5rem 0;">المتابعة والاستشفاء.</h3>
+            <p class="t9n" data-ar="نرافقك في رحلة التعافي خطوة بخطوة حتى العودة للنشاط الكامل."
+              data-en="We accompany you step-by-step through the recovery phase until you return to full activity."
+              style="opacity: 0.7;">نرافقك في رحلة التعافي خطوة بخطوة حتى العودة للنشاط الكامل.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; align-items: start;">
+        <div class="contact-info">
+          <h2 style="font-size: 3.5rem; margin-bottom: 2rem;"><span class="t9n" data-ar="تواصل معنا"
+              data-en="Get in">تواصل معنا</span> <br><span class="drama-italic t9n" data-ar="مباشرة."
+              data-en="Touch.">مباشرة.</span></h2>
+          <div style="display: grid; gap: 2rem;">
+            <div style="display: flex; gap: 1.5rem; align-items: center;">
+              <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 1rem;"><i
+                  data-lucide="phone"></i></div>
+              <div>
+                <p style="font-weight: 700; margin: 0;">01503753779</p>
               </div>
-              <div class="info-item">
-                <i class="fa-solid fa-envelope"></i>
-                <div>
-                  <h4>Email Us</h4>
-                  <p>clinic@drmohamed.com</p>
-                </div>
-              </div>
-              <div class="info-item">
-                <i class="fa-solid fa-location-dot"></i>
-                <div>
-                  <h4>Visit Us</h4>
-                  <p>Abbas El-Akkad St, Nasr City, Cairo, Egypt</p>
-                </div>
+            </div>
+            <div style="display: flex; gap: 1.5rem; align-items: center;">
+              <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 1rem;"><i
+                  data-lucide="map-pin"></i></div>
+              <div>
+                <p class="t9n" data-ar="ليسا الجماليه منزل الحاج كامل عبدالله خلف صيدلية الشفاء"
+                  data-en="Lisa Gammaliya, Haji Kamel Abdullah home, behind Al-Shifa Pharmacy"
+                  style="font-weight: 700; margin: 0;">ليسا الجماليه منزل الحاج كامل عبدالله خلف صيدلية الشفاء</p>
               </div>
             </div>
           </div>
-
-          <div class="contact-form-container reveal delayed">
-            <form id="contactForm" class="contact-form">
-              <div class="form-row">
-                <input type="text" placeholder="Your Name" required>
-                <input type="tel" placeholder="Phone Number" required>
-              </div>
-              <input type="email" placeholder="Email Address" required>
-              <select required>
-                <option value="" disabled selected>Service Type</option>
-                <option value="clinic">Clinic Appointment</option>
-                <option value="consultation">Virtual Consultation</option>
-                <option value="visit">Representative Visit</option>
-              </select>
-              <textarea rows="4" placeholder="Your Message" required></textarea>
-              <button type="submit" class="btn btn-primary btn-block">Send Message <i
-                  class="fa-solid fa-paper-plane"></i></button>
-            </form>
-          </div>
         </div>
+
+        <form class="contact-form">
+          <div class="form-grid">
+            <div class="form-group"><label class="t9n" data-ar="الأسم الكامل" data-en="Full Name">الأسم
+                الكامل</label><input type="text" class="form-input"></div>
+            <div class="form-group"><label class="t9n" data-ar="رقم الهاتف" data-en="Phone Number">رقم
+                الهاتف</label><input type="tel" class="form-input"></div>
+          </div>
+          <div class="form-group">
+            <label class="t9n" data-ar="نوع الخدمة" data-en="Service Type">نوع الخدمة</label>
+            <select class="form-input" style="appearance: auto; background: rgba(255,255,255,0.05);">
+              <option class="t9n" data-ar="حجز كشف جديد" data-en="New Consultation">حجز كشف جديد</option>
+              <option class="t9n" data-ar="حجز إعادة" data-en="Follow-up Visit">حجز إعادة</option>
+              <option class="t9n" data-ar="زيارة مندوب" data-en="Representative Visit">زيارة مندوب</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary t9n" data-ar="إرسال الطلب" data-en="Send Request"
+            style="width: 100%; padding: 1.2rem;">إرسال الطلب</button>
+        </form>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="#" class="footer-logo">MEDICORE<span>.</span></a>
-          <p>A global standard in orthopedic surgery and trauma care, delivering life-changing results every single day.
-          </p>
-          <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-          </div>
-        </div>
-        <div class="footer-links">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#cases">Showcase</a></li>
-          </ul>
-        </div>
-        <div class="footer-cta">
-          <h4>Ready to move?</h4>
-          <p>Book your appointment today and start your journey back to full mobility.</p>
-          <a href="#contact" class="btn btn-primary btn-sm">Book Free Consult</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; <span id="year"></span> Dr. Mohamed Elmaghawry. All rights reserved. | <a href="#">Privacy Policy</a>
-        </p>
+  <footer class="section" style="background: #000; border-radius: 4rem 4rem 0 0; padding-bottom: 2rem;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; text-align: center;">
+      <h3 class="t9n" data-ar="د. محمد المغاوري" data-en="Dr. Mohamed Elmaghawry">د. محمد المغاوري</h3>
+      <div style="margin-top: 2rem; opacity: 0.3; font-size: 0.8rem;">&copy; 2026 د. محمد المغاوري. All Rights Reserved.
       </div>
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="js/script.js"></script>
 </body>
 
