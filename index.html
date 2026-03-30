@@ -36,11 +36,14 @@
       <a href="#protocol" class="t9n" data-ar="البروتوكول" data-en="Protocol">البروتوكول</a>
       <a href="#contact" class="btn btn-primary t9n" data-ar="احجز موعدك" data-en="Book Appointment">احجز موعدك</a>
     </div>
-    <div style="display: flex; gap: 0.5rem; align-items: center;">
+    <div class="nav-controls" style="display: flex; gap: 0.5rem; align-items: center;">
       <button id="lang-toggle" class="btn btn-secondary"
         style="padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.8rem; font-weight: 700;">EN</button>
       <button id="theme-toggle" class="btn btn-secondary" style="padding: 0.5rem; border-radius: 50%;">
         <i data-lucide="moon" size="20"></i>
+      </button>
+      <button id="menu-toggle" class="btn btn-secondary mobile-only" style="padding: 0.5rem; border-radius: 50%; display: none;">
+        <i data-lucide="menu" size="20"></i>
       </button>
     </div>
   </nav>
@@ -182,35 +185,26 @@
               class="drama-italic t9n" data-ar="التعافي الكامل." data-en="Full Recovery.">التعافي الكامل.</span></h2>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
-          <div class="reveal-up"
-            style="background: var(--bg-surface); padding: 3rem; border-radius: var(--radius-outer); border: 1px solid rgba(255,255,255,0.05);">
-            <span style="font-family: var(--font-mono); color: var(--highlight);">01 / DIAGNOSIS</span>
-            <h3 class="t9n" data-ar="الفحص الدقيق." data-en="Precision Scanning."
-              style="font-size: 2rem; margin: 1.5rem 0;">الفحص الدقيق.</h3>
+        <div class="protocol-grid">
+          <div class="protocol-card reveal-up">
+            <span class="protocol-step">01 / DIAGNOSIS</span>
+            <h3 class="t9n" data-ar="الفحص الدقيق." data-en="Precision Scanning.">الفحص الدقيق.</h3>
             <p class="t9n" data-ar="تشخيص الحالة بدقة باستخدام أحدث التقنيات الطبية لضمان اختيار العلاج الأمثل."
-              data-en="Accurate clinical diagnosis using modern diagnostics to determine the ideal treatment pathway."
-              style="opacity: 0.7;">تشخيص الحالة بدقة باستخدام أحدث التقنيات الطبية لضمان اختيار العلاج الأمثل.</p>
+              data-en="Accurate clinical diagnosis using modern diagnostics to determine the ideal treatment pathway.">تشخيص الحالة بدقة باستخدام أحدث التقنيات الطبية لضمان اختيار العلاج الأمثل.</p>
           </div>
 
-          <div class="reveal-up"
-            style="background: var(--bg-surface); padding: 3rem; border-radius: var(--radius-outer); border: 1px solid rgba(255,255,255,0.05);">
-            <span style="font-family: var(--font-mono); color: var(--highlight);">02 / TREATMENT</span>
-            <h3 class="t9n" data-ar="الخطة العلاجية." data-en="Treatment Design."
-              style="font-size: 2rem; margin: 1.5rem 0;">الخطة العلاجية.</h3>
+          <div class="protocol-card reveal-up">
+            <span class="protocol-step">02 / TREATMENT</span>
+            <h3 class="t9n" data-ar="الخطة العلاجية." data-en="Treatment Design.">الخطة العلاجية.</h3>
             <p class="t9n" data-ar="تطبيق بروتوكول علاجي مخصص لكل حالة، سواء بالعلاج التحفظي أو التدخل الجراحي."
-              data-en="Implementing custom protocols for every patient, whether through conservative care or surgery."
-              style="opacity: 0.7;">تطبيق بروتوكول علاجي مخصص لكل حالة، سواء بالعلاج التحفظي أو التدخل الجراحي.</p>
+              data-en="Implementing custom protocols for every patient, whether through conservative care or surgery.">تطبيق بروتوكول علاجي مخصص لكل حالة، سواء بالعلاج التحفظي أو التدخل الجراحي.</p>
           </div>
 
-          <div class="reveal-up"
-            style="background: var(--bg-surface); padding: 3rem; border-radius: var(--radius-outer); border: 1px solid rgba(255,255,255,0.05);">
-            <span style="font-family: var(--font-mono); color: var(--highlight);">03 / RECOVERY</span>
-            <h3 class="t9n" data-ar="المتابعة والاستشفاء." data-en="Full Recovery."
-              style="font-size: 2rem; margin: 1.5rem 0;">المتابعة والاستشفاء.</h3>
+          <div class="protocol-card reveal-up">
+            <span class="protocol-step">03 / RECOVERY</span>
+            <h3 class="t9n" data-ar="المتابعة والاستشفاء." data-en="Full Recovery.">المتابعة والاستشفاء.</h3>
             <p class="t9n" data-ar="نرافقك في رحلة التعافي خطوة بخطوة حتى العودة للنشاط الكامل."
-              data-en="We accompany you step-by-step through the recovery phase until you return to full activity."
-              style="opacity: 0.7;">نرافقك في رحلة التعافي خطوة بخطوة حتى العودة للنشاط الكامل.</p>
+              data-en="We accompany you step-by-step through the recovery phase until you return to full activity.">نرافقك في رحلة التعافي خطوة بخطوة حتى العودة للنشاط الكامل.</p>
           </div>
         </div>
       </div>
@@ -266,11 +260,10 @@
     </section>
   </main>
 
-  <footer class="section" style="background: #000; border-radius: 4rem 4rem 0 0; padding-bottom: 2rem;">
-    <div class="container" style="max-width: 1200px; margin: 0 auto; text-align: center;">
+  <footer class="footer-primary section">
+    <div class="container footer-container">
       <h3 class="t9n" data-ar="د. محمد المغاوري" data-en="Dr. Mohamed Elmaghawry">د. محمد المغاوري</h3>
-      <div style="margin-top: 2rem; opacity: 0.3; font-size: 0.8rem;">&copy; 2026 د. محمد المغاوري. All Rights Reserved.
-      </div>
+      <div class="footer-bottom">&copy; 2026 د. محمد المغاوري. All Rights Reserved.</div>
     </div>
   </footer>
 

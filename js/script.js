@@ -30,8 +30,28 @@ document.addEventListener('DOMContentLoaded', () => {
     lucide.createIcons();
   });
 
-  // 1. Navbar Morphing Logic
+  // 1. Navbar Logic
   const nav = document.querySelector('.nav-island');
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  const menuIcon = menuToggle.querySelector('i');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    const isActive = navLinks.classList.contains('active');
+    menuIcon.setAttribute('data-lucide', isActive ? 'x' : 'menu');
+    lucide.createIcons();
+  });
+
+  // Close menu on link click
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      menuIcon.setAttribute('data-lucide', 'menu');
+      lucide.createIcons();
+    });
+  });
+
   ScrollTrigger.create({
     start: 'top -50',
     onUpdate: (self) => {
@@ -41,7 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
         nav.classList.remove('scrolled');
       }
     }
-  });
+  }); 
+
 
   // 2. Hero Animations
   const heroTl = gsap.timeline({ defaults: { ease: 'power4.out', duration: 1.5 }});
@@ -77,25 +98,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 3. High-Fidelity Orbit Interaction
   function initOrbits() {
+    const visual = document.querySelector('.hero-visual');
     const rings = document.querySelectorAll('.orbit-ring');
-    const badges = {
-      '#badge-1': { ring: 420, speed: 45, offset: 0 },
-      '#badge-2': { ring: 550, speed: 60, offset: 120 },
-      '#badge-3': { ring: 320, speed: 30, offset: 240 }
+    const badgesCfg = {
+      '#badge-1': { ringRatio: 0.84, speed: 45, offset: 0 },
+      '#badge-2': { ringRatio: 1.1, speed: 60, offset: 120 },
+      '#badge-3': { ringRatio: 0.64, speed: 30, offset: 240 }
     };
 
     // Main Orbit Logic
     let angle = 0;
     function updateOrbits() {
       angle += 0.002;
+      const visualWidth = visual.offsetWidth;
       
       // Rotate Badges
-      Object.entries(badges).forEach(([id, cfg]) => {
+      Object.entries(badgesCfg).forEach(([id, cfg]) => {
         const el = document.querySelector(id);
         if (!el) return;
         const currentAngle = angle * cfg.speed + cfg.offset;
-        const x = Math.cos(currentAngle * (Math.PI / 180)) * (cfg.ring / 2);
-        const y = Math.sin(currentAngle * (Math.PI / 180)) * (cfg.ring / 2);
+        const radius = (visualWidth * cfg.ringRatio) / 2;
+        const x = Math.cos(currentAngle * (Math.PI / 180)) * radius;
+        const y = Math.sin(currentAngle * (Math.PI / 180)) * radius;
         
         gsap.set(el, { x, y });
       });
@@ -104,14 +128,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const dot = document.getElementById('dot-main');
       if (dot) {
         const dotAngle = angle * 80;
-        const x = Math.cos(dotAngle * (Math.PI / 180)) * 250;
-        const y = Math.sin(dotAngle * (Math.PI / 180)) * 250;
+        const radius = visualWidth / 2;
+        const x = Math.cos(dotAngle * (Math.PI / 180)) * radius;
+        const y = Math.sin(dotAngle * (Math.PI / 180)) * radius;
         gsap.set(dot, { x, y });
       }
 
       requestAnimationFrame(updateOrbits);
     }
     updateOrbits();
+
 
     // Rotate Rings (Static background)
     gsap.to('.ring-1', { rotate: 360, duration: 40, repeat: -1, ease: 'none' });
