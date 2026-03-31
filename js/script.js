@@ -156,31 +156,47 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const submitBtn = contactForm.querySelector('button');
-      const originalText = submitBtn.innerText;
       
-      gsap.to(submitBtn, {
-        scale: 0.95,
-        opacity: 0.8,
-        duration: 0.2
-      });
+      // Dynamic text based on language
+      const isAr = document.documentElement.getAttribute('lang') === 'ar';
+      const originalText = submitBtn.innerText;
+      const sendingText = isAr ? 'جاري الإرسال...' : 'Sending...';
+      const successText = isAr ? 'تم الإرسال بنجاح! ✓' : 'Sent Successfully! ✓';
+      const errorText = isAr ? 'حدث خطأ ما! ✗' : 'Error Sending! ✗';
 
-      submitBtn.innerText = 'جاري الإرسال...';
+      gsap.to(submitBtn, { scale: 0.95, opacity: 0.8, duration: 0.2 });
+      submitBtn.innerText = sendingText;
       submitBtn.disabled = true;
 
-      setTimeout(() => {
-        submitBtn.innerText = 'تم الإرسال بنجاح! ✓';
-        submitBtn.style.background = '#4CAF50';
+      const formData = new FormData(contactForm);
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      })
+      .then(async (response) => {
+        if (response.ok) {
+          submitBtn.innerText = successText;
+          submitBtn.style.background = '#4CAF50';
+          contactForm.reset();
+        } else {
+          submitBtn.innerText = errorText;
+          submitBtn.style.background = '#f44336';
+        }
+      })
+      .catch(() => {
+        submitBtn.innerText = errorText;
+        submitBtn.style.background = '#f44336';
+      })
+      .finally(() => {
         gsap.to(submitBtn, { scale: 1.05, duration: 0.6, ease: 'back.out' });
-        
-        contactForm.reset();
-        
         setTimeout(() => {
           submitBtn.innerText = originalText;
           submitBtn.style.background = '';
           submitBtn.disabled = false;
           gsap.to(submitBtn, { scale: 1, duration: 0.3 });
         }, 3000);
-      }, 1500);
+      });
     });
   }
 
