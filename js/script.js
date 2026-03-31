@@ -366,4 +366,41 @@ document.addEventListener('DOMContentLoaded', () => {
     ease: 'power1.inOut'
   });
 
+  // 9. Case Lightbox Functionality
+  const lightbox = document.getElementById('case-lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxClose = document.getElementById('lightbox-close');
+
+  document.querySelectorAll('.ba-image-wrapper').forEach(wrapper => {
+    wrapper.addEventListener('click', () => {
+      const img = wrapper.querySelector('img');
+      if (img) {
+        lightboxImg.src = img.src;
+        // Reset filter for lightbox view if it was before
+        lightboxImg.style.filter = 'none';
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden'; 
+      }
+    });
+  });
+
+  const closeLightbox = () => {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+    setTimeout(() => {
+      lightboxImg.src = '';
+    }, 400);
+  };
+
+  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  if (lightbox) {
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
+  });
+
 });
