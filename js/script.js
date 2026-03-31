@@ -289,25 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 6. Theme Toggle Logic
-  const themeToggle = document.getElementById('theme-toggle');
-  const body = document.body;
-  const themeIcon = themeToggle.querySelector('i');
 
-  themeToggle.addEventListener('click', () => {
-    body.classList.toggle('light-mode');
-    const isLight = body.classList.contains('light-mode');
-    
-    // Update colors
-    if (isLight) {
-      themeIcon.setAttribute('data-lucide', 'sun');
-      gsap.to('.nav-island', { background: 'rgba(250, 248, 245, 0.85)', duration: 0.3 });
-    } else {
-      themeIcon.setAttribute('data-lucide', 'moon');
-      gsap.to('.nav-island', { background: 'rgba(10, 26, 58, 0.85)', duration: 0.3 });
-    }
-    lucide.createIcons();
-  });
 
   // 7. General Magnetic Feel for Buttons
   const buttons = document.querySelectorAll('.btn');

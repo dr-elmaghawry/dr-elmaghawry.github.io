@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="dark-mode">
+<body>
 
   <!-- Navbar -->
   <nav class="nav-island">
@@ -39,9 +39,7 @@
     <div class="nav-controls" style="display: flex; gap: 0.5rem; align-items: center;">
       <button id="lang-toggle" class="btn btn-secondary"
         style="padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.8rem; font-weight: 700;">EN</button>
-      <button id="theme-toggle" class="btn btn-secondary" style="padding: 0.5rem; border-radius: 50%;">
-        <i data-lucide="moon" size="20"></i>
-      </button>
+
       <button id="menu-toggle" class="btn btn-secondary mobile-only" style="padding: 0.5rem; border-radius: 50%; display: none;">
         <i data-lucide="menu" size="20"></i>
       </button>
@@ -68,7 +66,7 @@
           <p class="reveal t9n"
             data-ar="نقدم رعاية طبية متطورة في مجال جراحة العظام والكسور لضمان عودتك لحياتك الطبيعية في أسرع وقت."
             data-en="Providing advanced orthopaedic care and trauma surgery to ensure you return to your normal life as quickly as possible."
-            style="font-size: 1.25rem; margin-bottom: 2rem; max-width: 600px; color: rgba(255,255,255,0.8); line-height: 1.6;">
+            style="font-size: 1.25rem; margin-bottom: 2rem; max-width: 600px; color: var(--text); opacity: 0.8; line-height: 1.6;">
             نقدم رعاية طبية متطورة في مجال جراحة العظام والكسور لضمان عودتك لحياتك الطبيعية في أسرع وقت.
           </p>
           <div class="reveal hero-btns" style="display: flex; gap: 1rem; justify-content: flex-start;">
@@ -299,23 +297,30 @@
           </div>
         </div>
 
-        <form class="contact-form">
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+          <!-- Web3Forms Access Key -->
+          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+
           <div class="form-grid">
-            <div class="form-group"><label class="t9n" data-ar="الأسم الكامل" data-en="Full Name">الأسم
-                الكامل</label><input type="text" class="form-input"></div>
-            <div class="form-group"><label class="t9n" data-ar="رقم الهاتف" data-en="Phone Number">رقم
-                الهاتف</label><input type="tel" class="form-input"></div>
+            <div class="form-group">
+              <label class="t9n" data-ar="الأسم الكامل" data-en="Full Name">الأسم الكامل</label>
+              <input type="text" name="name" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label class="t9n" data-ar="رقم الهاتف" data-en="Phone Number">رقم الهاتف</label>
+              <input type="tel" name="phone" class="form-input" required>
+            </div>
           </div>
           <div class="form-group">
             <label class="t9n" data-ar="نوع الخدمة" data-en="Service Type">نوع الخدمة</label>
-            <select class="form-input" style="appearance: auto; background: rgba(255,255,255,0.05);">
-              <option class="t9n" data-ar="حجز كشف جديد" data-en="New Consultation">حجز كشف جديد</option>
-              <option class="t9n" data-ar="حجز إعادة" data-en="Follow-up Visit">حجز إعادة</option>
-              <option class="t9n" data-ar="زيارة مندوب" data-en="Representative Visit">زيارة مندوب</option>
+            <select name="service" class="form-input" style="appearance: auto; background: var(--border);">
+              <option class="t9n" data-ar="حجز كشف جديد" data-en="New Consultation" value="New Consultation">حجز كشف جديد</option>
+              <option class="t9n" data-ar="حجز إعادة" data-en="Follow-up Visit" value="Follow-up">حجز إعادة</option>
+              <option class="t9n" data-ar="زيارة مندوب" data-en="Representative Visit" value="Representative">زيارة مندوب</option>
             </select>
           </div>
           <button type="submit" class="btn btn-primary t9n" data-ar="إرسال الطلب" data-en="Send Request"
-            style="width: 100%; padding: 1.2rem;">إرسال الطلب</button>
+            style="width: 100%; padding: 1rem;">إرسال الطلب</button>
         </form>
       </div>
     </section>
