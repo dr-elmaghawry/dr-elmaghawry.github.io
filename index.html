@@ -53,10 +53,10 @@
     <section id="hero" class="hero section">
       <div class="container hero-grid">
         <div class="hero-content">
-          <span class="doctor-name reveal t9n" data-ar="د. محمد المغاوري" data-en="Dr. Mohamed Elmaghawry">د. محمد
+          <span class="doctor-name t9n" data-ar="د. محمد المغاوري" data-en="Dr. Mohamed Elmaghawry">د. محمد
             المغاوري</span>
-          <div class="reveal t9n" data-ar="جراحة العظام" data-en="Orthopaedic Surgery"
-            style="display: inline-block; padding: 0.4rem 1rem; border: 1px solid var(--highlight); border-radius: 2rem; margin-bottom: 2rem; font-size: 0.7rem; font-family: var(--font-mono); color: var(--highlight);">
+          <div class="t9n" data-ar="جراحة العظام" data-en="Orthopaedic Surgery"
+            style="display: inline-block; padding: 0.4rem 1rem; border: 1px solid var(--highlight); border-radius: 2rem; margin-bottom: 2rem; font-size: 0.7rem; font-family: var(--font-mono); color: var(--highlight); opacity: 1;">
             جراحة العظام
           </div>
           <h1 class="reveal">
@@ -106,21 +106,65 @@
         </div>
       </div>
     </section>
-
-    <!-- Infinite Scroll Ticker -->
-    <section id="services" class="ticker-section">
-      <div class="ticker-wrapper" id="ticker-services">
-        <div class="ticker-row">
-          <span><span class="ticker-highlight t9n" data-ar="رؤيتنا:" data-en="Our Vision:">رؤيتنا:</span> <span
-              class="t9n" data-ar="استعادة جودة الحياة." data-en="Restoring Life.">استعادة جودة الحياة.</span></span>
-          <span><i data-lucide="bone" color="var(--highlight)"></i> <span class="t9n" data-ar="علاج الكسور المعقدة"
-              data-en="Complex Fractures">علاج الكسور المعقدة</span></span>
-          <span><i data-lucide="activity" color="var(--highlight)"></i> <span class="t9n" data-ar="الطب الرياضي"
-              data-en="Sports Medicine">الطب الرياضي</span></span>
-          <span><i data-lucide="heart-pulse" color="var(--highlight)"></i> <span class="t9n"
-              data-ar="آلام العمود الفقري" data-en="Spine Care">آلام العمود الفقري</span></span>
-          <span><i data-lucide="sparkles" color="var(--highlight)"></i> <span class="t9n" data-ar="حقن المفاصل"
-              data-en="Joint Injections">حقن المفاصل</span></span>
+    <!-- Unified Services Ribbon -->
+    <section id="services" class="services-ribbon">
+      <div class="ribbon-container">
+        <div class="vision-intro">
+          <span class="vision-tag t9n" data-ar="رؤيتنا" data-en="VISION">رؤيتنا</span>
+          <h2 class="vision-text t9n" data-ar="استعادة جودة الحياة." data-en="Restoring Quality of Life.">استعادة جودة الحياة.</h2>
+        </div>
+        
+        <div class="ticker-wrapper">
+          <div class="ticker-track">
+            <!-- Group 1: items repeated 3x to guarantee full screen coverage -->
+            <div class="ticker-group">
+              <div class="service-capsule"><i data-lucide="bone"></i><span class="t9n" data-ar="علاج الكسور المعقدة" data-en="Complex Fractures">علاج الكسور المعقدة</span></div>
+              <div class="service-capsule"><i data-lucide="activity"></i><span class="t9n" data-ar="الطب الرياضي" data-en="Sports Medicine">الطب الرياضي</span></div>
+              <div class="service-capsule"><i data-lucide="heart-pulse"></i><span class="t9n" data-ar="آلام العمود الفقري" data-en="Spine Care">آلام العمود الفقري</span></div>
+              <div class="service-capsule"><i data-lucide="sparkles"></i><span class="t9n" data-ar="حقن المفاصل" data-en="Joint Injections">حقن المفاصل</span></div>
+              <div class="service-capsule"><i data-lucide="stethoscope"></i><span class="t9n" data-ar="جراحة المفاصل" data-en="Joint Surgery">جراحة المفاصل</span></div>
+              <div class="service-capsule"><i data-lucide="shield-check"></i><span class="t9n" data-ar="إعادة التأهيل" data-en="Rehabilitation">إعادة التأهيل</span></div>
+              <div class="service-capsule"><i data-lucide="zap"></i><span class="t9n" data-ar="الجراحة التنظيرية" data-en="Arthroscopy">الجراحة التنظيرية</span></div>
+              <div class="service-capsule"><i data-lucide="bone"></i><span class="t9n" data-ar="علاج الكسور المعقدة" data-en="Complex Fractures">علاج الكسور المعقدة</span></div>
+              <div class="service-capsule"><i data-lucide="activity"></i><span class="t9n" data-ar="الطب الرياضي" data-en="Sports Medicine">الطب الرياضي</span></div>
+              <div class="service-capsule"><i data-lucide="heart-pulse"></i><span class="t9n" data-ar="آلام العمود الفقري" data-en="Spine Care">آلام العمود الفقري</span></div>
+              <div class="service-capsule"><i data-lucide="sparkles"></i><span class="t9n" data-ar="حقن المفاصل" data-en="Joint Injections">حقن المفاصل</span></div>
+              <div class="service-capsule"><i data-lucide="stethoscope"></i><span class="t9n" data-ar="جراحة المفاصل" data-en="Joint Surgery">جراحة المفاصل</span></div>
+              <div class="service-capsule"><i data-lucide="shield-check"></i><span class="t9n" data-ar="إعادة التأهيل" data-en="Rehabilitation">إعادة التأهيل</span></div>
+              <div class="service-capsule"><i data-lucide="zap"></i><span class="t9n" data-ar="الجراحة التنظيرية" data-en="Arthroscopy">الجراحة التنظيرية</span></div>
+              <div class="service-capsule"><i data-lucide="bone"></i><span class="t9n" data-ar="علاج الكسور المعقدة" data-en="Complex Fractures">علاج الكسور المعقدة</span></div>
+              <div class="service-capsule"><i data-lucide="activity"></i><span class="t9n" data-ar="الطب الرياضي" data-en="Sports Medicine">الطب الرياضي</span></div>
+              <div class="service-capsule"><i data-lucide="heart-pulse"></i><span class="t9n" data-ar="آلام العمود الفقري" data-en="Spine Care">آلام العمود الفقري</span></div>
+              <div class="service-capsule"><i data-lucide="sparkles"></i><span class="t9n" data-ar="حقن المفاصل" data-en="Joint Injections">حقن المفاصل</span></div>
+              <div class="service-capsule"><i data-lucide="stethoscope"></i><span class="t9n" data-ar="جراحة المفاصل" data-en="Joint Surgery">جراحة المفاصل</span></div>
+              <div class="service-capsule"><i data-lucide="shield-check"></i><span class="t9n" data-ar="إعادة التأهيل" data-en="Rehabilitation">إعادة التأهيل</span></div>
+              <div class="service-capsule"><i data-lucide="zap"></i><span class="t9n" data-ar="الجراحة التنظيرية" data-en="Arthroscopy">الجراحة التنظيرية</span></div>
+            </div>
+            <!-- Group 2: identical clone -->
+            <div class="ticker-group" aria-hidden="true">
+              <div class="service-capsule"><i data-lucide="bone"></i><span class="t9n" data-ar="علاج الكسور المعقدة" data-en="Complex Fractures">علاج الكسور المعقدة</span></div>
+              <div class="service-capsule"><i data-lucide="activity"></i><span class="t9n" data-ar="الطب الرياضي" data-en="Sports Medicine">الطب الرياضي</span></div>
+              <div class="service-capsule"><i data-lucide="heart-pulse"></i><span class="t9n" data-ar="آلام العمود الفقري" data-en="Spine Care">آلام العمود الفقري</span></div>
+              <div class="service-capsule"><i data-lucide="sparkles"></i><span class="t9n" data-ar="حقن المفاصل" data-en="Joint Injections">حقن المفاصل</span></div>
+              <div class="service-capsule"><i data-lucide="stethoscope"></i><span class="t9n" data-ar="جراحة المفاصل" data-en="Joint Surgery">جراحة المفاصل</span></div>
+              <div class="service-capsule"><i data-lucide="shield-check"></i><span class="t9n" data-ar="إعادة التأهيل" data-en="Rehabilitation">إعادة التأهيل</span></div>
+              <div class="service-capsule"><i data-lucide="zap"></i><span class="t9n" data-ar="الجراحة التنظيرية" data-en="Arthroscopy">الجراحة التنظيرية</span></div>
+              <div class="service-capsule"><i data-lucide="bone"></i><span class="t9n" data-ar="علاج الكسور المعقدة" data-en="Complex Fractures">علاج الكسور المعقدة</span></div>
+              <div class="service-capsule"><i data-lucide="activity"></i><span class="t9n" data-ar="الطب الرياضي" data-en="Sports Medicine">الطب الرياضي</span></div>
+              <div class="service-capsule"><i data-lucide="heart-pulse"></i><span class="t9n" data-ar="آلام العمود الفقري" data-en="Spine Care">آلام العمود الفقري</span></div>
+              <div class="service-capsule"><i data-lucide="sparkles"></i><span class="t9n" data-ar="حقن المفاصل" data-en="Joint Injections">حقن المفاصل</span></div>
+              <div class="service-capsule"><i data-lucide="stethoscope"></i><span class="t9n" data-ar="جراحة المفاصل" data-en="Joint Surgery">جراحة المفاصل</span></div>
+              <div class="service-capsule"><i data-lucide="shield-check"></i><span class="t9n" data-ar="إعادة التأهيل" data-en="Rehabilitation">إعادة التأهيل</span></div>
+              <div class="service-capsule"><i data-lucide="zap"></i><span class="t9n" data-ar="الجراحة التنظيرية" data-en="Arthroscopy">الجراحة التنظيرية</span></div>
+              <div class="service-capsule"><i data-lucide="bone"></i><span class="t9n" data-ar="علاج الكسور المعقدة" data-en="Complex Fractures">علاج الكسور المعقدة</span></div>
+              <div class="service-capsule"><i data-lucide="activity"></i><span class="t9n" data-ar="الطب الرياضي" data-en="Sports Medicine">الطب الرياضي</span></div>
+              <div class="service-capsule"><i data-lucide="heart-pulse"></i><span class="t9n" data-ar="آلام العمود الفقري" data-en="Spine Care">آلام العمود الفقري</span></div>
+              <div class="service-capsule"><i data-lucide="sparkles"></i><span class="t9n" data-ar="حقن المفاصل" data-en="Joint Injections">حقن المفاصل</span></div>
+              <div class="service-capsule"><i data-lucide="stethoscope"></i><span class="t9n" data-ar="جراحة المفاصل" data-en="Joint Surgery">جراحة المفاصل</span></div>
+              <div class="service-capsule"><i data-lucide="shield-check"></i><span class="t9n" data-ar="إعادة التأهيل" data-en="Rehabilitation">إعادة التأهيل</span></div>
+              <div class="service-capsule"><i data-lucide="zap"></i><span class="t9n" data-ar="الجراحة التنظيرية" data-en="Arthroscopy">الجراحة التنظيرية</span></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -212,27 +256,44 @@
 
     <!-- Contact Section -->
     <section id="contact" class="section">
-      <div
-        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; align-items: start;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; align-items: stretch;">
         <div class="contact-info">
           <h2 style="font-size: 3.5rem; margin-bottom: 2rem;"><span class="t9n" data-ar="تواصل معنا"
               data-en="Get in">تواصل معنا</span> <br><span class="drama-italic t9n" data-ar="مباشرة."
               data-en="Touch.">مباشرة.</span></h2>
-          <div style="display: grid; gap: 2rem;">
-            <div style="display: flex; gap: 1.5rem; align-items: center;">
-              <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 1rem;"><i
-                  data-lucide="phone"></i></div>
+          <div style="display: grid; gap: 1.5rem;">
+            <!-- Phone -->
+            <div class="contact-card">
+              <div class="contact-icon"><i data-lucide="phone"></i></div>
               <div>
-                <p style="font-weight: 700; margin: 0;">01503753779</p>
+                <p class="contact-label t9n" data-ar="هاتف" data-en="Phone">هاتف</p>
+                <a href="tel:+201503753779" class="contact-value">01503753779</a>
               </div>
             </div>
-            <div style="display: flex; gap: 1.5rem; align-items: center;">
-              <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 1rem;"><i
-                  data-lucide="map-pin"></i></div>
+            <!-- Email -->
+            <div class="contact-card">
+              <div class="contact-icon"><i data-lucide="mail"></i></div>
               <div>
-                <p class="t9n" data-ar="ليسا الجماليه منزل الحاج كامل عبدالله خلف صيدلية الشفاء"
-                  data-en="Lisa Gammaliya, Haji Kamel Abdullah home, behind Al-Shifa Pharmacy"
-                  style="font-weight: 700; margin: 0;">ليسا الجماليه منزل الحاج كامل عبدالله خلف صيدلية الشفاء</p>
+                <p class="contact-label t9n" data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</p>
+                <a href="mailto:www.m.elmaghawry96@gmail.com" class="contact-value">m.elmaghawry96@gmail.com</a>
+              </div>
+            </div>
+            <!-- Facebook -->
+            <div class="contact-card">
+              <div class="contact-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </div>
+              <div>
+                <p class="contact-label t9n" data-ar="فيسبوك" data-en="Facebook">فيسبوك</p>
+                <a href="https://www.facebook.com/profile.php?id=100064768249693" target="_blank" class="contact-value">د. محمد المغاوري</a>
+              </div>
+            </div>
+            <!-- Location -->
+            <div class="contact-card">
+              <div class="contact-icon"><i data-lucide="map-pin"></i></div>
+              <div>
+                <p class="contact-label t9n" data-ar="العنوان" data-en="Address">العنوان</p>
+                <p class="contact-value t9n" data-ar="ليسا الجماليه منزل الحاج كامل عبدالله خلف صيدلية الشفاء" data-en="Lisa Gammaliya, behind Al-Shifa Pharmacy">ليسا الجماليه منزل الحاج كامل عبدالله خلف صيدلية الشفاء</p>
               </div>
             </div>
           </div>
@@ -258,11 +319,80 @@
         </form>
       </div>
     </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 4rem;">
+          <p class="t9n" data-ar="الأسئلة الشائعة" data-en="FAQ"
+            style="color: var(--highlight); font-family: var(--font-mono); font-size: 0.9rem; letter-spacing: 2px;">الأسئلة الشائعة</p>
+          <h2 style="font-size: 3rem;"><span class="t9n" data-ar="إجابات على" data-en="Answers to Your">إجابات على</span> <span class="drama-italic t9n" data-ar="تساؤلاتك." data-en="Questions.">تساؤلاتك.</span></h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span class="t9n" data-ar="متى أحتاج إلى رؤية طبيب عظام؟" data-en="When should I see an orthopedic surgeon?">متى أحتاج إلى رؤية طبيب عظام؟</span>
+              <i data-lucide="chevron-down" class="faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p class="t9n" data-ar="إذا كنت تعاني من آلام مستمرة في العظام أو المفاصل أو العضلات لأكثر من أسبوعين، أو بعد إصابة مباشرة، أو إذا لاحظت تورمًا أو محدودية في الحركة، فيجب استشارة متخصص." data-en="If you experience persistent bone, joint, or muscle pain for more than two weeks, after a direct injury, or if you notice swelling or limited movement, you should consult a specialist.">إذا كنت تعاني من آلام مستمرة في العظام أو المفاصل أو العضلات لأكثر من أسبوعين، أو بعد إصابة مباشرة، أو إذا لاحظت تورمًا أو محدودية في الحركة، فيجب استشارة متخصص.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span class="t9n" data-ar="هل الجراحة هي الخيار الوحيد؟" data-en="Is surgery the only option?">هل الجراحة هي الخيار الوحيد؟</span>
+              <i data-lucide="chevron-down" class="faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p class="t9n" data-ar="لا، في كثير من الحالات يمكن علاج المشاكل العظمية بالعلاج التحفظي كالأدوية والعلاج الطبيعي وحقن المفاصل. الجراحة هي الخيار الأخير عند فشل الطرق الأخرى." data-en="No. In many cases, bone problems can be treated conservatively with medications, physiotherapy, and joint injections. Surgery is the last resort when other methods fail.">لا، في كثير من الحالات يمكن علاج المشاكل العظمية بالعلاج التحفظي كالأدوية والعلاج الطبيعي وحقن المفاصل. الجراحة هي الخيار الأخير عند فشل الطرق الأخرى.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span class="t9n" data-ar="كم تستغرق فترة التعافي بعد الجراحة؟" data-en="How long is recovery after surgery?">كم تستغرق فترة التعافي بعد الجراحة؟</span>
+              <i data-lucide="chevron-down" class="faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p class="t9n" data-ar="تعتمد فترة التعافي على نوع العملية وحالة المريض. بعض العمليات البسيطة تتطلب أسابيع، بينما قد تستغرق عمليات استبدال المفاصل الكبرى عدة أشهر مع متابعة منتظمة." data-en="Recovery time depends on the type of surgery and the patient's condition. Simple procedures may take weeks, while major joint replacements can take several months with regular follow-up.">تعتمد فترة التعافي على نوع العملية وحالة المريض. بعض العمليات البسيطة تتطلب أسابيع، بينما قد تستغرق عمليات استبدال المفاصل الكبرى عدة أشهر مع متابعة منتظمة.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span class="t9n" data-ar="كيف أحجز موعداً؟" data-en="How do I book an appointment?">كيف أحجز موعداً؟</span>
+              <i data-lucide="chevron-down" class="faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p class="t9n" data-ar="يمكنك التواصل معنا عبر الهاتف 01503753779، أو البريد الإلكتروني m.elmaghawry96@gmail.com، أو من خلال نموذج التواصل في الموقع، أو عبر صفحتنا على الفيسبوك." data-en="You can contact us by phone at 01503753779, by email at m.elmaghawry96@gmail.com, via the contact form on the website, or through our Facebook page.">يمكنك التواصل معنا عبر الهاتف 01503753779، أو البريد الإلكتروني m.elmaghawry96@gmail.com، أو من خلال نموذج التواصل في الموقع، أو عبر صفحتنا على الفيسبوك.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span class="t9n" data-ar="هل تُقبل جميع أنواع التأمين الصحي؟" data-en="Do you accept health insurance?">هل تُقبل جميع أنواع التأمين الصحي؟</span>
+              <i data-lucide="chevron-down" class="faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p class="t9n" data-ar="يُرجى التواصل معنا مباشرة للاستفسار عن التغطية التأمينية، حيث تختلف الأنواع المقبولة حسب مكان العيادة أو المستشفى." data-en="Please contact us directly to inquire about insurance coverage, as accepted types vary depending on the clinic or hospital location.">يُرجى التواصل معنا مباشرة للاستفسار عن التغطية التأمينية، حيث تختلف الأنواع المقبولة حسب مكان العيادة أو المستشفى.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer-primary section">
     <div class="container footer-container">
       <h3 class="t9n" data-ar="د. محمد المغاوري" data-en="Dr. Mohamed Elmaghawry">د. محمد المغاوري</h3>
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/profile.php?id=100064768249693" target="_blank" class="footer-social-link" title="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="mailto:m.elmaghawry96@gmail.com" class="footer-social-link" title="Email">
+          <i data-lucide="mail"></i>
+        </a>
+        <a href="tel:+201503753779" class="footer-social-link" title="Phone">
+          <i data-lucide="phone"></i>
+        </a>
+      </div>
       <div class="footer-bottom">&copy; 2026 د. محمد المغاوري. All Rights Reserved.</div>
     </div>
   </footer>
