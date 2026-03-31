@@ -170,6 +170,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const formData = new FormData(contactForm);
 
+      // 10. Dynamic Subject based on Service Type
+      const service = formData.get('service');
+      let customSubject = 'رسالة من موقع العيادة';
+      
+      if (service === 'New Consultation') customSubject = 'طلب حجز جديد - د. المغاوري';
+      else if (service === 'Follow-up') customSubject = 'طلب حجز إعادة - د. المغاوري';
+      else if (service === 'Representative') customSubject = 'زيارة مندوب - د. المغاوري';
+      
+      formData.set('subject', customSubject);
+
       fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         body: formData
